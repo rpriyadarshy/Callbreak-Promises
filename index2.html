@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Step 1: Create an array named `numbers` with some random integer values.
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Step 2: Create a function named `filterArray` that takes two arguments: `arr` (an array) and `callback` (a callback function).
+function filterArray(arr, callback) {
+  const filteredArray = [];
+  
+  // Step 3: Inside the `filterArray` function, iterate over each element of the `arr` array and call the `callback` function on each element.
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      filteredArray.push(arr[i]);
+    }
+  }
+  
+  // Step 6: Display the original array and the filtered array using `console.log()`.
+  console.log('Original Array:', arr);
+  console.log('Filtered Array:', filteredArray);
+
+  return filteredArray;
+}
+
+// Step 4: Define the callback function.
+function isEven(element) {
+  // The callback function checks if the current element is even or odd and returns `true` for even elements and `false` for odd elements.
+  return element % 2 === 0;
+}
+
+// Step 5: Use the returned values from the callback function to create a new array of filtered elements.
+const filteredNumbers = filterArray(numbers, isEven);
+
+// Test the function with different arrays.
+console.log('Filtered Numbers:', filteredNumbers);
+
+</script>
+</html>
