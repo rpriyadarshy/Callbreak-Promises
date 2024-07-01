@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Step 1: Create a function named `getUserData` that takes two arguments: `id` (user ID) and `callback` (a callback function).
+function getUserData(id, callback) {
+  // Step 2: Inside the `getUserData` function, simulate an asynchronous API request to fetch user data by using `setTimeout`.
+  setTimeout(() => {
+    // Step 3: After a delay of 2 seconds, call the `callback` function and pass a dummy user object.
+    const user = {
+      id: id,
+      name: 'John Doe',
+      email: 'john.doe@example.com'
+    };
+    callback(user);
+  }, 2000);
+}
+
+// Step 4: Create a function named `displayUser` that takes a user object as an argument and displays the user details using `console.log()`.
+function displayUser(user) {
+  console.log('User ID:', user.id);
+  console.log('User Name:', user.name);
+  console.log('User Email:', user.email);
+}
+
+// Step 5: Call the `getUserData` function with a user ID and the `displayUser` function as the callback.
+getUserData(1, displayUser);
+
+// Test the function by fetching user data asynchronously.
+
+</script>
+</html>
