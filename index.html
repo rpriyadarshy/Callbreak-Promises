@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Step 1: Create a function named `calculate` that takes two numbers as arguments.
+function calculate(num1, num2) {
+  // Step 2: Define a callback function named `operation` inside `calculate`.
+  function operation(num1, num2, callback) {
+    // Step 3: Inside `operation`, call the `callback` function and pass `num1` and `num2` as arguments.
+    return callback(num1, num2);
+  }
+
+  // Step 5: Call the `operation` function twice, once with addition and once with multiplication.
+  const add = operation(num1, num2, function(a, b) {
+    return a + b;
+  });
+
+  const multiply = operation(num1, num2, function(a, b) {
+    return a * b;
+  });
+
+  // Step 6: Display the results of the calculations using `console.log()`.
+  console.log(`Addition of ${num1} and ${num2} is: ${add}`);
+  console.log(`Multiplication of ${num1} and ${num2} is: ${multiply}`);
+}
+
+// Test the function with different numbers.
+calculate(3, 4);
+calculate(7, 5);
+
+</script>
+</html>
